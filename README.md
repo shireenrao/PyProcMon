@@ -1,4 +1,4 @@
 PyProcMon
 =========
 
-My Attempt at a process monitor
+My lame attempt at a process monitor
