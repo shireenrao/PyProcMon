@@ -14,7 +14,7 @@ import subprocess
 def checkprocess(owner, *args):
     ''' look at system processes and check if given process is running '''
     found = False
-    proc_name,ident = args
+    proc_name, ident = args
     ps = subprocess.Popen(['ps', 'aux'], stdout=subprocess.PIPE,)
     user = subprocess.Popen(['grep', owner],
                             stdin=ps.stdout,
@@ -25,7 +25,6 @@ def checkprocess(owner, *args):
     all_procs = process.stdout
     for proc_line in all_procs:
         if ident in proc_line and 'pyprocmon.py' not in proc_line:
-            print 'proc_line ', proc_line
             found = True
             break
 
@@ -50,3 +49,6 @@ if check:
     print "Process is running"
 else:
     print "Process is not running"
+    print "Starting process...."
+    subprocess.Popen(the_cmd)
+#    time.sleep(60)
