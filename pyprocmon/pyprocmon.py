@@ -43,12 +43,12 @@ run_mins = 50
 num_secs_to_run = run_mins*60
 start_time = time.time()
 end_time = start_time + num_secs_to_run
-#while time.time() < end_time:
-check = checkprocess('shireenrao', proc_to_monitor, 'Python')
-if check:
-    print "Process is running"
-else:
-    print "Process is not running"
-    print "Starting process...."
-    subprocess.Popen(the_cmd)
-#    time.sleep(60)
+while time.time() < end_time:
+    check = checkprocess('shireenrao', proc_to_monitor, 'Python')
+    if check:
+        print "Process is running"
+    else:
+        print "Process is not running"
+        print "Starting process...."
+        subprocess.Popen(the_cmd)
+        time.sleep(300)
